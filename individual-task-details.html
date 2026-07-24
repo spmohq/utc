@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Individual Task Details | System Map</title>
+  <link rel="icon" href="spm.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-gradient-start: #020617;
+      --bg-gradient-end: #0f172a;
+      --card-bg: rgba(30, 41, 59, 0.4);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --accent-primary: #22d3ee;
+      --accent-hover: #67e8f9;
+      --accent-success: #10b981;
+      --code-bg: rgba(0, 0, 0, 0.3);
+      --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+      --input-bg: rgba(15, 23, 42, 0.6);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: fixed linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+      color: var(--text-primary);
+      line-height: 1.6;
+      padding: 60px 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container {
+      max-width: 850px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    /* Input Grid Section */
+    .input-section {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 30px;
+      margin-bottom: 40px;
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    label {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--accent-primary);
+      letter-spacing: 0.05em;
+    }
+
+    textarea {
+      background: var(--input-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 15px;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      resize: vertical;
+      min-height: 60px;
+      transition: all 0.2s;
+    }
+
+    textarea:focus {
+      outline: none;
+      border-color: var(--accent-primary);
+      background: rgba(15, 23, 42, 0.8);
+    }
+
+    /* Output Section */
+    .prompt-workflow {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .step-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+
+    .step-header {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 20px;
+    }
+
+    .step-label {
+      font-weight: 800;
+      font-size: 0.8rem;
+      background: var(--accent-primary);
+      color: #020617;
+      padding: 5px 16px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .prompt-content {
+      background: var(--code-bg);
+      padding: 30px;
+      border-radius: 12px;
+      font-family: 'Source Code Pro', monospace;
+      font-size: 1rem;
+      color: #cbd5e1;
+      white-space: pre-wrap;
+      border: 1px solid rgba(255,255,255,0.05);
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+
+    .copy-btn {
+      background: rgba(34, 211, 238, 0.1);
+      color: var(--accent-primary);
+      border: 1px solid var(--accent-primary);
+      padding: 14px 32px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: all 0.2s;
+      width: 100%;
+    }
+
+    .copy-btn:hover {
+      background: var(--accent-primary);
+      color: #020617;
+    }
+
+    .copy-btn.copied {
+      background: var(--accent-success);
+      border-color: var(--accent-success);
+      color: white;
+    }
+
+    .footer1 {
+      margin: 50px 0 20px;
+      text-align: center;
+    }
+
+    .footer1 a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 34px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: .02em;
+      color: var(--accent-primary);
+      background: rgba(30,41,59,.45);
+      border: 1px solid rgba(34,211,238,.35);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 10px 25px rgba(0,0,0,.25);
+      transition: all .25s ease;
+    }
+
+    .footer1 a:hover {
+      background: rgba(34,211,238,.15);
+      border-color: var(--accent-primary);
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(34,211,238,.18);
+    }
+
+    .footer {
+      margin-top: 80px;
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--card-border);
+      padding-top: 40px;
+      width: 100%;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 1.6rem; }
+      .step-card { padding: 25px; }
+      .prompt-content { font-size: 0.85rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>Individual Task Details</h1>
+    </header>
+
+    <!-- Multi-line Dynamic Input Fields -->
+    <div class="input-section">
+      <div class="input-group">
+        <label for="taskNumber">Task Number</label>
+        <textarea id="taskNumber" placeholder="e.g. 01" oninput="updatePrompt()"></textarea>
+      </div>
+
+      <div class="input-group">
+        <label for="taskTitle">Task Title</label>
+        <textarea id="taskTitle" placeholder="e.g. Social Media Research" oninput="updatePrompt()"></textarea>
+      </div>
+
+      <div class="input-group">
+        <label for="whatToDo">What to do in it</label>
+        <textarea id="whatToDo" placeholder="Describe what to do..." oninput="updatePrompt()"></textarea>
+      </div>
+
+      <div class="input-group">
+        <label for="whyToDo">Why to do that</label>
+        <textarea id="whyToDo" placeholder="Describe why to do that..." oninput="updatePrompt()"></textarea>
+      </div>
+
+      <div class="input-group">
+        <label for="process">Process</label>
+        <textarea id="process" placeholder="Describe the process..." oninput="updatePrompt()"></textarea>
+      </div>
+
+      <div class="input-group">
+        <label for="inputFields">Input fields - with its source</label>
+        <textarea id="inputFields" placeholder="List input fields and sources..." oninput="updatePrompt()"></textarea>
+      </div>
+
+      <div class="input-group">
+        <label for="pgpLink">PGP Link</label>
+        <textarea id="pgpLink" placeholder="Paste the PGP link here..." oninput="updatePrompt()"></textarea>
+      </div>
+    </div>
+
+    <div class="prompt-workflow">
+      <div class="step-card">
+        <div class="step-header">
+          <span class="step-label">Generated Prompt</span>
+        </div>
+        <div class="prompt-content" id="p1"></div>
+        <button class="copy-btn" onclick="copyText('p1', this)">
+          <span>Copy Prompt</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="footer1">
+      <a href="https://ailab.shop" target="_blank">
+          📲 Join Siva's WhatsApp Channel
+      </a>
+    </div>
+
+    <footer class="footer">
+      <p>Copyright &copy; <script>document.write(new Date().getFullYear())</script> Siva Prasad Mukherjee. All Rights Reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    function updatePrompt() {
+      const taskNo = document.getElementById('taskNumber').value || "[Task Number]";
+      const title = document.getElementById('taskTitle').value || "[Task Title]";
+      const what = document.getElementById('whatToDo').value || "[What to do in it]";
+      const why = document.getElementById('whyToDo').value || "[Why to do that]";
+      const process = document.getElementById('process').value || "[Process]";
+      const inputs = document.getElementById('inputFields').value || "[Input fields - with its source]";
+      const pgp = document.getElementById('pgpLink').value || "[PGP Link]";
+
+      const combinedPrompt = `Task#${taskNo}, ${title}\n\n${what}\n\n${why}\n\n${process}\n\n${inputs}\n\nPGP Link: ${pgp}`;
+      
+      document.getElementById('p1').innerText = combinedPrompt;
+    }
+
+    function copyText(id, btn) {
+      const text = document.getElementById(id).innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const originalText = btn.innerHTML;
+        btn.innerHTML = `<span>Copied to Clipboard!</span>`;
+        btn.classList.add('copied');
+        
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    }
+
+    // Initialize prompt view
+    window.onload = updatePrompt;
+  </script>
+</body>
+</html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idea or Concept Extractor - SPM</title>
+    
+    <!-- Facebook Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID_HERE'); 
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID_HERE&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Facebook Pixel Code -->
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #ef6c57; 
+            --bg-light: #f4f7f6;
+            --white: #ffffff;
+            --text-dark: #333;
+            --code-bg: #1e1e1e;
+            --code-text: #d4d4d4;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            color: var(--primary-color);
+            font-family: sans-serif;
+            font-weight: 900;
+            font-size: 16px;
+            width: 42px;
+            height: 30px;
+            border-radius: 4px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .graphy-icon {
+            width: 18px;
+            height: 18px;
+            border-radius: 3px;
+            background: white;
+            padding: 1px;
+        }
+
+        .page-title-area {
+            text-align: center;
+            padding: 30px 20px 10px 20px;
+        }
+
+        .page-title-area h1 {
+            font-size: 28px;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            flex: 1;
+            width: 100%;
+        }
+
+        .prompt-card {
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+            margin-bottom: 40px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .prompt-header {
+            background: #f8f9fa;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .prompt-header h2 {
+            font-size: 18px;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .copy-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+
+        .copy-btn:hover {
+            opacity: 0.9;
+        }
+
+        .prompt-content {
+            padding: 30px;
+            background: var(--code-bg);
+            color: var(--code-text);
+            font-family: 'Fira Code', monospace;
+            font-size: 14px;
+            white-space: pre-wrap;
+            word-break: break-word;
+            line-height: 1.7;
+            max-height: 600px;
+            overflow-y: auto;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            color: #666;
+            border-top: 1px solid var(--border-color);
+            background: #fff;
+        }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; padding: 15px; }
+            .nav-links { font-size: 13px; gap: 15px; }
+            .prompt-header { flex-direction: column; gap: 10px; align-items: flex-start; }
+            .copy-btn { width: 100%; justify-content: center; }
+            .page-title-area h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <div class="logo-box">SPM</div> শিব প্রসাদ মুখার্জি 
+        </div>
+        <div class="nav-links">
+            <a href="https://spmukherjee.co.in/" target="_blank"><i class="fa-regular fa-user"></i> শিবা</a>
+            
+            <a href="https://spm.graphy.com/s/store" target="_blank">
+                <img src="https://www.graphy.com/favicon.ico" alt="Graphy" class="graphy-icon"> শিবার কালেকশন দেখুন
+            </a>
+            
+            <a href="#"><i class="fa-regular fa-circle-question"></i> সহায়তা</a>
+        </div>
+    </header>
+
+    <div class="page-title-area">
+        <h1>Idea or Concept Extractor</h1>
+    </div>
+
+    <div class="container">
+        
+        <!-- Prompt #1: Sales Copy Review -->
+        <div class="prompt-card">
+            <div class="prompt-header">
+                <h2><i class="fa-solid fa-magnifying-glass-chart"></i> Sales Copy Review</h2>
+                <button class="copy-btn" onclick="copyPrompt('salesCopyPrompt', this)">
+                    <i class="fa-regular fa-copy"></i> Copy Prompt
+                </button>
+            </div>
+            <pre class="prompt-content" id="salesCopyPrompt">ROLE
+
+You are an expert Product Positioning Strategist, Offer Analyst, Marketing Philosopher, and Sales Copy Deconstruction Specialist.
+
+Your expertise is identifying the underlying principle, core idea, positioning, problem, and transformation hidden inside sales copy. You think beyond the written words to uncover the strategic foundation that gives a product its meaning and persuasive power.
+
+You distinguish between:
+• The product and the principle behind it.
+• Features and underlying ideas.
+• The problem being solved and the transformation being created.
+
+You analyze with precision and never invent claims that are not reasonably supported by the sales copy.
+
+BENGALI LOCALIZATION LAYER
+
+Please write the output of the PROMPT below in the most spontaneous, natural-sounding modern conversational Bengali as spoken in Kolkata, West Bengal, India.
+
+The writing should be easy for a 21-year-old to understand while maintaining high editorial quality, clarity, precision, and natural readability.
+
+Strict Rules
+
+- Reflect Kolkata conversational cadence through sentence rhythm and phrasing by using slightly formal, polite, and smoothly flowing sentence structures with balanced pacing. Avoid slang, regional grammar, overly literary wording, or awkward literal translations.
+- Always use the formal "আপনি", never "তুমি".
+- The tone should remain warm, conversational, approachable, confident, and quietly authoritative.
+- Write as if speaking directly to one person in a natural face-to-face conversation.
+- Do not translate literally. Rewrite naturally so the output feels as though it was originally written in Bengali.
+- Preserve the original meaning, intent, emotional tone, and persuasive effect without adding, removing, or changing information.
+
+TASK
+
+আপলোডেড সেলসকপিটা রিভিউ করো ও নীচের প্রশ্নগুলোর জবাব দাও -
+১, প্রোডাক্টটাকে কোন নীতি back করছে? 
+২, নীতিটা কি? 
+৩, সেটাকে আইডিয়া বা concept হিসেবে এক দু লাইনে বর্ণনা করো।
+৪, এই আইডিয়াটা কোন সমস্যার সমাধান করে?
+৫, এই আইডিয়াটা কোন transformation আনে?
+৬, এই প্রোডাক্টটা কোন সমস্যার সমাধান করে?
+৭, এই প্রোডাক্টটা কোন transformation আনে?</pre>
+        </div>
+
+        <!-- Prompt #2: Document Review -->
+        <div class="prompt-card">
+            <div class="prompt-header">
+                <h2><i class="fa-solid fa-file-lines"></i> Document Review</h2>
+                <button class="copy-btn" onclick="copyPrompt('docReviewPrompt', this)">
+                    <i class="fa-regular fa-copy"></i> Copy Prompt
+                </button>
+            </div>
+            <pre class="prompt-content" id="docReviewPrompt">ROLE
+
+You are an expert Product Positioning Strategist, Offer Analyst, Marketing Philosopher, and Sales Copy Deconstruction Specialist.
+
+Your expertise is identifying the underlying principle, core idea, positioning, problem, and transformation hidden inside sales copy. You think beyond the written words to uncover the strategic foundation that gives a product its meaning and persuasive power.
+
+You distinguish between:
+• The product and the principle behind it.
+• Features and underlying ideas.
+• The problem being solved and the transformation being created.
+
+You analyze with precision and never invent claims that are not reasonably supported by the sales copy.
+
+BENGALI LOCALIZATION LAYER
+
+Please write the output of the PROMPT below in the most spontaneous, natural-sounding modern conversational Bengali as spoken in Kolkata, West Bengal, India.
+
+The writing should be easy for a 21-year-old to understand while maintaining high editorial quality, clarity, precision, and natural readability.
+
+Strict Rules
+
+- Reflect Kolkata conversational cadence through sentence rhythm and phrasing by using slightly formal, polite, and smoothly flowing sentence structures with balanced pacing. Avoid slang, regional grammar, overly literary wording, or awkward literal translations.
+- Always use the formal "আপনি", never "তুমি".
+- The tone should remain warm, conversational, approachable, confident, and quietly authoritative.
+- Write as if speaking directly to one person in a natural face-to-face conversation.
+- Do not translate literally. Rewrite naturally so the output feels as though it was originally written in Bengali.
+- Preserve the original meaning, intent, emotional tone, and persuasive effect without adding, removing, or changing information.
+
+TASK
+
+আপলোডেড ডকুমেন্টটা রিভিউ করো ও নীচের প্রশ্নগুলোর জবাব দাও -
+১, ডকুমেন্টটাকে কোন নীতি back করছে? 
+২, নীতিটা কি? 
+৩, সেটাকে আইডিয়া বা concept হিসেবে এক দু লাইনে বর্ণনা করো।
+৪, এই আইডিয়াটা কোন সমস্যার সমাধান করে?
+৫, এই আইডিয়াটা কোন transformation আনে?
+৬, এই ডকুমেন্টটা কোন সমস্যার সমাধান করে?
+৭, ডকুমেন্টটা কোন transformation আনে?</pre>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>Copyright &copy; <script>document.write(new Date().getFullYear())</script> Siva Prasad Mukherjee. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function copyPrompt(elementId, btn) {
+            const text = document.getElementById(elementId).innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const originalHTML = btn.innerHTML;
+                btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+                btn.style.background = '#2ecc71';
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalHTML;
+                    btn.style.background = '';
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+                alert('Copy failed. Please select and copy the text manually.');
+            });
+        }
+    </script>
+
+</body>
+</html>

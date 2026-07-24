@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Content Ideas - SPM</title>
+    
+    <!-- Facebook Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID_HERE'); 
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID_HERE&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Facebook Pixel Code -->
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #ef6c57; 
+            --bg-light: #f4f7f6;
+            --white: #ffffff;
+            --text-dark: #333;
+            --code-bg: #1e1e1e;
+            --code-text: #d4d4d4;
+            --border-color: #e0e0e0;
+            --input-focus: #ef6c57;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            color: var(--primary-color);
+            font-family: sans-serif;
+            font-weight: 900;
+            font-size: 16px;
+            width: 42px;
+            height: 30px;
+            border-radius: 4px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .page-title-area {
+            text-align: center;
+            padding: 30px 20px 10px 20px;
+        }
+
+        .page-title-area h1 {
+            font-size: 28px;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            flex: 1;
+            width: 100%;
+        }
+
+        .form-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+            margin-bottom: 30px;
+            border: 1px solid var(--border-color);
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        .dynamic-textarea {
+            width: 100%;
+            min-height: 100px;
+            padding: 12px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 14px;
+            resize: vertical;
+            transition: border-color 0.3s;
+        }
+
+        .dynamic-textarea:focus, .select-input:focus {
+            outline: none;
+            border-color: var(--input-focus);
+        }
+
+        .select-input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            background-color: white;
+            font-family: inherit;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .prompt-card {
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+            margin-bottom: 50px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .prompt-header {
+            background: #f8f9fa;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .prompt-header h2 {
+            font-size: 18px;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .copy-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+
+        .copy-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .prompt-content {
+            padding: 30px;
+            background: var(--code-bg);
+            color: var(--code-text);
+            font-family: 'Fira Code', monospace;
+            font-size: 13px;
+            white-space: pre-wrap;
+            word-break: break-word;
+            line-height: 1.6;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            color: #666;
+            border-top: 1px solid var(--border-color);
+            background: #fff;
+        }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; padding: 15px; }
+            .nav-links { font-size: 13px; gap: 15px; }
+            .prompt-header { flex-direction: column; gap: 10px; align-items: flex-start; }
+            .copy-btn { width: 100%; justify-content: center; }
+            .page-title-area h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <div class="logo-box">SPM</div> শিব প্রসাদ মুখার্জি 
+        </div>
+        <div class="nav-links">
+            <a href="https://spmukherjee.co.in/" target="_blank"><i class="fa-regular fa-user"></i> শিবা</a>
+            <a href="https://spm.graphy.com/s/store" target="_blank">শিবার কালেকশন দেখুন</a>
+        </div>
+    </header>
+
+    <div class="page-title-area">
+        <h1>Final Content Ideas</h1>
+    </div>
+
+    <div class="container">
+        <!-- Input Section -->
+        <div class="form-card">
+            <div class="input-group">
+                <label>1. Product Knowledge Map (Paste Prompt 1 Output)</label>
+                <textarea id="knowledgeMap" class="dynamic-textarea" placeholder="পণ্য সম্পর্কে বিস্তারিত ম্যাপটি এখানে পেস্ট করুন..."></textarea>
+            </div>
+
+            <div class="input-group">
+                <label>2. Core Concept of Product</label>
+                <textarea id="coreConceptProd" class="dynamic-textarea" placeholder="প্রোডাক্টের মূল ধারণাটি লিখুন..."></textarea>
+            </div>
+
+            <div class="input-group">
+                <label>3. Campaign Goal</label>
+                <select id="campaignGoal" class="select-input">
+                    <option value="">-- অপশন বেছে নিন --</option>
+                    <option value="Build awareness">Build awareness</option>
+                    <option value="Build curiosity">Build curiosity</option>
+                    <option value="Build trust">Build trust</option>
+                    <option value="Challenge misconceptions">Challenge misconceptions</option>
+                    <option value="Increase demand before launch">Increase demand before launch</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>4. Campaign Core Concept</label>
+                <textarea id="campaignCoreConcept" class="dynamic-textarea" placeholder="ক্যাম্পেইনের মূল ধারণাটি লিখুন..."></textarea>
+            </div>
+
+            <div class="input-group">
+                <label>5. Possible Campaign Angles</label>
+                <textarea id="possibleAngles" class="dynamic-textarea" placeholder="সম্ভাব্য ক্যাম্পেইন অ্যাঙ্গেলগুলো এখানে লিখুন..."></textarea>
+            </div>
+
+            <div class="input-group">
+                <label>6. Possible Platform Angles</label>
+                <select id="platformAngle" class="select-input">
+                    <option value="">-- অপশন বেছে নিন --</option>
+                    <option value="Story">Story</option>
+                    <option value="Observation">Observation</option>
+                    <option value="Question">Question</option>
+                    <option value="Myth">Myth</option>
+                    <option value="Mistake">Mistake</option>
+                    <option value="Comparison">Comparison</option>
+                    <option value="Mental Model">Mental Model</option>
+                    <option value="Analogy">Analogy</option>
+                    <option value="Perspective Shift">Perspective Shift</option>
+                    <option value="Objection">Objection</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Prompt Card -->
+        <div class="prompt-card">
+            <div class="prompt-header">
+                <h2><i class="fa-solid fa-wand-magic-sparkles"></i> Final Content Campaign Prompt</h2>
+                <button class="copy-btn" onclick="copyFinalPrompt(this)">
+                    <i class="fa-regular fa-copy"></i> Copy Prompt
+                </button>
+            </div>
+            <pre class="prompt-content" id="promptTemplate">ROLE
+
+You are an expert Educational Content Strategist, Content Marketing Philosopher, Campaign Architect, and Professional Copywriter.
+
+Your responsibility is to create ONE complete educational content campaign.
+
+You do NOT create random content.
+
+Every piece of content must work together to strengthen belief in ONE Core Concept.
+
+---
+
+BENGALI LOCALIZATION LAYER
+
+Write everything in natural, modern conversational Bengali as spoken in Kolkata, West Bengal, India.
+
+Rules:
+
+- Always use the formal "আপনি".
+- Write naturally, never literally translated.
+- Keep the language simple and easy to understand.
+- Preserve the intended meaning.
+- Maintain a warm, confident and quietly authoritative tone.
+- Avoid Bangladeshi vocabulary and expressions.
+
+---
+
+CONTENT PHILOSOPHY
+
+People ultimately want a Transformation.
+
+They buy a product because they believe it can solve a Problem.
+
+They believe the Process because they believe the Core Concept behind it.
+
+Therefore:
+
+• Social Media introduces ideas.
+• Blog builds understanding and belief.
+• The Product teaches implementation.
+• The Product delivers transformation.
+
+Never teach the complete implementation in free content.
+
+---
+
+INPUT
+
+Product Knowledge Map
+
+[Product Knowledge Map]
+
+---
+
+Campaign Goal:
+
+[Campaign Goal]
+
+If not provided, infer the most appropriate goal.
+
+---
+
+Core Concept:
+
+[Core Concept of Product]
+
+If provided, use it.
+
+Otherwise, select the highest-priority Core Concept from the Product Knowledge Map.
+
+---
+
+Campaign Angle:
+
+A Campaign Angle is one specific perspective of the selected Core Concept.
+
+Example
+
+Core Concept
+
+[Campaign Core Concept]
+
+Possible Campaign Angles
+
+[Possible Campaign Angles]
+
+
+If not provided, generate the strongest Campaign Angle.
+
+---
+
+TASK
+
+Create ONE complete educational content campaign.
+
+The campaign must revolve around:
+
+- ONE Core Concept
+- ONE Campaign Angle
+
+All content pieces must reinforce the same idea from different perspectives.
+
+Supporting Concepts may be used only to explain the selected Core Concept.
+
+Never introduce another Core Concept.
+
+---
+
+PLATFORM RESPONSIBILITIES
+
+Facebook Post
+
+Purpose
+
+Introduce the idea.
+
+Create awareness.
+
+Challenge an assumption or belief.
+
+Do NOT teach the complete solution.
+
+---
+
+Facebook Reel
+
+Purpose
+
+Capture attention immediately.
+
+Spark curiosity.
+
+Leave viewers wanting to know more.
+
+---
+
+Facebook Story
+
+Purpose
+
+Deliver one quick insight.
+
+Reinforce today's message.
+
+Keep it short and memorable.
+
+---
+
+Podcast Reel
+
+Purpose
+
+Explore the idea conversationally.
+
+Build understanding.
+
+Develop belief.
+
+Do NOT teach implementation.
+
+Target length:
+
+Approximately 60 seconds.
+
+---
+
+Blog Article
+
+Purpose
+
+Provide the deepest educational content.
+
+Explain the reasoning.
+
+Address misconceptions.
+
+Answer objections.
+
+Build belief.
+
+Do NOT teach implementation.
+
+---
+
+PLATFORM ANGLES
+
+Every platform should approach the same Campaign Angle differently.
+
+Possible Platform Angles include:
+
+[Possible Platform Angles]
+
+Never repeat the same Platform Angle.
+
+Changing Platform Angles is encouraged.
+
+Changing the Core Concept or Campaign Angle is forbidden.
+
+---
+
+OUTPUT
+
+Return the content in the following order.
+
+---
+
+Core Concept
+
+(State it.)
+
+---
+
+Campaign Angle
+
+(State it.)
+
+---
+
+Facebook Post
+
+Write one complete Facebook Post.
+
+Include a natural CTA if appropriate.
+
+---
+
+Facebook Reel
+
+Write one complete Reel script.
+
+Structure:
+
+Hook
+
+↓
+
+Body
+
+↓
+
+Ending
+
+↓
+
+CTA (if appropriate)
+
+---
+
+Facebook Story
+
+Write one complete Facebook Story.
+
+Keep it concise and impactful.
+
+---
+
+Podcast Reel
+
+Write one complete 60-second podcast script.
+
+Structure it naturally for spoken delivery.
+
+---
+
+Blog Article
+
+Write one complete educational blog article.
+
+Suggested structure:
+
+Title
+
+Introduction
+
+Problem
+
+Core Concept
+
+Reasoning
+
+Example
+
+Conclusion
+
+CTA (if appropriate)
+
+---
+
+QUALITY CHECK
+
+Before returning the campaign, silently verify:
+
+✓ Exactly ONE Core Concept.
+
+✓ Exactly ONE Campaign Angle.
+
+✓ Every content piece reinforces the same Core Concept.
+
+✓ Every platform serves a different purpose.
+
+✓ Every platform uses a different Platform Angle.
+
+✓ Social Media creates curiosity and awareness.
+
+✓ Blog builds understanding and belief.
+
+✓ No implementation is revealed.
+
+✓ All drafts are complete, publishable first drafts.
+
+Return only the completed educational content campaign.</pre>
+        </div>
+    </div>
+
+    <footer>
+        <p>Copyright &copy; <script>document.write(new Date().getFullYear())</script> Siva Prasad Mukherjee. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function copyFinalPrompt(btn) {
+            // Get current values
+            const knowledge = document.getElementById('knowledgeMap').value || "[None Provided]";
+            const coreProd = document.getElementById('coreConceptProd').value || "[None Provided]";
+            const goal = document.getElementById('campaignGoal').value || "[None Provided]";
+            const campConcept = document.getElementById('campaignCoreConcept').value || "[None Provided]";
+            const angles = document.getElementById('possibleAngles').value || "[None Provided]";
+            const platformA = document.getElementById('platformAngle').value || "[None Provided]";
+
+            // Template replacement
+            let fullPrompt = document.getElementById('promptTemplate').innerText;
+            fullPrompt = fullPrompt.replace("[Product Knowledge Map]", knowledge);
+            fullPrompt = fullPrompt.replace("[Campaign Goal]", goal);
+            fullPrompt = fullPrompt.replace("[Core Concept of Product]", coreProd);
+            fullPrompt = fullPrompt.replace("[Campaign Core Concept]", campConcept);
+            fullPrompt = fullPrompt.replace("[Possible Campaign Angles]", angles);
+            fullPrompt = fullPrompt.replace("[Possible Platform Angles]", platformA);
+
+            // Copy logic
+            navigator.clipboard.writeText(fullPrompt).then(() => {
+                const originalHTML = btn.innerHTML;
+                btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+                btn.style.background = '#2ecc71';
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalHTML;
+                    btn.style.background = '';
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+                alert("Copy failed. Please select text manually.");
+            });
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Content Ideas 1 - SPM</title>
+    
+    <!-- Facebook Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID_HERE'); 
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID_HERE&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Facebook Pixel Code -->
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #ef6c57; 
+            --bg-light: #f4f7f6;
+            --white: #ffffff;
+            --text-dark: #333;
+            --code-bg: #1e1e1e;
+            --code-text: #d4d4d4;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Branded Header Styles */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            color: var(--primary-color);
+            font-family: sans-serif;
+            font-weight: 900;
+            font-size: 16px;
+            width: 42px;
+            height: 30px;
+            border-radius: 4px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .page-title-area {
+            text-align: center;
+            padding: 30px 20px 10px 20px;
+        }
+
+        .page-title-area h1 {
+            font-size: 28px;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+            flex: 1;
+            width: 100%;
+        }
+
+        .prompt-card {
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+            margin-bottom: 50px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .prompt-header {
+            background: #f8f9fa;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .prompt-header h2 {
+            font-size: 18px;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .copy-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+
+        .copy-btn:hover {
+            opacity: 0.9;
+        }
+
+        .prompt-content {
+            padding: 35px;
+            background: var(--code-bg);
+            color: var(--code-text);
+            font-family: 'Fira Code', monospace;
+            font-size: 14px;
+            white-space: pre-wrap;
+            word-break: break-word;
+            line-height: 1.7;
+            max-height: 800px;
+            overflow-y: auto;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            color: #666;
+            border-top: 1px solid var(--border-color);
+            background: #fff;
+        }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; padding: 15px; }
+            .nav-links { font-size: 13px; gap: 15px; }
+            .prompt-header { flex-direction: column; gap: 10px; align-items: flex-start; }
+            .copy-btn { width: 100%; justify-content: center; }
+            .page-title-area h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <div class="logo-box">SPM</div> শিব প্রসাদ মুখার্জি 
+        </div>
+        <div class="nav-links">
+            <a href="https://spmukherjee.co.in/" target="_blank"><i class="fa-regular fa-user"></i> শিবা</a>
+            <a href="https://spm.graphy.com/s/store" target="_blank">
+                <i class="fa-solid fa-store"></i> শিবার কালেকশন দেখুন
+            </a>
+            <a href="#"><i class="fa-regular fa-circle-question"></i> সহায়তা</a>
+        </div>
+    </header>
+
+    <div class="page-title-area">
+        <h1>Final Content Ideas 1</h1>
+    </div>
+
+    <div class="container">
+        <div class="prompt-card">
+            <div class="prompt-header">
+                <h2><i class="fa-solid fa-brain"></i> Product Knowledge Map Builder Prompt</h2>
+                <button class="copy-btn" onclick="copyPrompt('knowledgeMapPrompt', this)">
+                    <i class="fa-regular fa-copy"></i> Copy Prompt
+                </button>
+            </div>
+            <pre class="prompt-content" id="knowledgeMapPrompt">ROLE
+
+You are an expert Product Positioning Strategist, Knowledge Extraction Specialist, Educational Product Analyst, and Marketing Philosopher.
+
+Your responsibility is to deeply understand the uploaded product material and transform it into a reusable **Product Knowledge Map**.
+
+You are NOT writing marketing content.
+
+You are discovering the strategic knowledge behind the product.
+
+---
+
+BENGALI LOCALIZATION LAYER
+
+Write everything in natural, modern conversational Bengali as spoken in Kolkata, West Bengal, India.
+
+Rules:
+
+- Always use the formal "আপনি".
+- Write naturally, never literally translated.
+- Keep the language simple and easy to understand.
+- Preserve the author's intended meaning.
+- Maintain a warm, confident and quietly authoritative tone.
+- Avoid Bangladeshi vocabulary and expressions.
+
+---
+
+PRODUCT PHILOSOPHY
+
+Every educational product can be understood through this chain:
+
+Transformation
+↓
+Problem
+↓
+Process
+↓
+Core Concept
+
+Your job is to discover this chain.
+
+Focus on understanding the product—not summarizing it.
+
+Infer missing information only when it is strongly supported by the source material.
+
+If you make important assumptions, clearly state them before the Product Knowledge Map.
+
+---
+
+INPUT
+
+Upload one or more of the following.
+
+Preferred Source Order
+
+1. Product PDF / eBook / Workbook / Course Material (Highest Priority)
+2. Sales Page / Sales Letter
+3. Webinar Transcript
+4. Product Notes
+5. Product Description
+6. Framework Document
+7. Any supporting material
+
+Source Priority Rules
+
+- If multiple documents are uploaded, always treat the highest-priority source as the primary source of truth.
+- Use lower-priority sources only to fill gaps or provide additional context.
+- If two sources conflict, always follow the higher-priority source.
+
+---
+
+TASK
+
+Read the entire document carefully.
+
+Understand:
+
+- What the product teaches
+- Why it exists
+- What transformation it promises
+- What problem it solves
+- The thinking behind the solution
+- The educational philosophy
+- The core ideas supporting the product
+
+Do NOT generate:
+
+- Facebook Posts
+- Reels
+- Stories
+- Blog Articles
+- Marketing Copy
+- Campaigns
+- Content Ideas
+
+Your output must become a reusable knowledge base for future content creation.
+
+---
+
+WRITING REQUIREMENTS
+
+Generate COMPLETE first drafts.
+
+Do NOT generate:
+
+- outlines
+- summaries
+- tables
+- notes
+- bullet-point plans
+- placeholders
+
+Every platform must receive fully written, publishable draft content.
+
+---
+
+OUTPUT
+
+1. Product Summary
+
+Briefly describe:
+
+- What the product is
+- Who it is for
+- What it helps people achieve
+
+---
+
+2. Target Audience
+
+Describe the intended audience, including:
+
+- Current situation
+- Pain points
+- Goals
+- Desired transformation
+
+---
+
+3. Transformation
+
+What ultimate transformation does the product promise?
+
+---
+
+4. Core Problem
+
+What primary problem prevents the audience from achieving that transformation?
+
+---
+
+5. Process
+
+Describe the overall process or methodology at a high level.
+
+Do NOT reveal implementation details.
+
+---
+
+6. Core Concept Library
+
+Identify every major Core Concept that could independently support an educational content campaign.
+
+Return as a Markdown table.
+
+| Sl | Core Concept | Why It Matters | Importance |
+|----|--------------|----------------|------------|
+
+Rules:
+
+- Merge similar concepts.
+- Remove duplicates.
+- Keep each concept concise.
+- Rank Importance as High, Medium or Low.
+
+---
+
+7. Supporting Concepts
+
+List concepts that help explain the Core Concepts but are not strong enough to become standalone campaigns.
+
+---
+
+8. Principles
+
+List the fundamental principles behind the product.
+
+---
+
+9. Belief Shifts
+
+Return as a Markdown table.
+
+| Current Belief | Desired Belief |
+|---------------|----------------|
+
+---
+
+10. Misconceptions
+
+List the common myths or misconceptions the product challenges.
+
+---
+
+11. Objections
+
+List the audience's likely doubts, objections or questions.
+
+---
+
+12. Evidence
+
+List the evidence used throughout the material.
+
+Examples:
+
+- Stories
+- Examples
+- Analogies
+- Demonstrations
+- Case Studies
+- Research
+- Visual Proof
+
+---
+
+13. Knowledge Boundary
+
+Identify what should remain exclusive to the paid product.
+
+Do NOT reveal implementation.
+
+---
+
+14. Core Concept Priority
+
+Rank the Core Concepts from strongest to weakest for educational content marketing.
+
+Return as a Markdown table.
+
+| Rank | Core Concept | Why |
+|------|--------------|-----|
+
+---
+
+15. Strategic Notes
+
+Include any important observations that would help create future educational content while maintaining accurate positioning.
+
+---
+
+QUALITY CHECK
+
+Before returning the Product Knowledge Map, silently verify:
+
+✓ The product has been understood rather than summarized.
+
+✓ Transformation, Problem, Process and Core Concepts are logically connected.
+
+✓ Every Core Concept is unique.
+
+✓ Supporting Concepts are not duplicated as Core Concepts.
+
+✓ No implementation details are revealed.
+
+✓ The Knowledge Boundary is respected.
+
+✓ The Product Knowledge Map is reusable across multiple future content campaigns.
+
+Return only the completed Product Knowledge Map.</pre>
+        </div>
+    </div>
+
+    <footer>
+        <p>Copyright &copy; <script>document.write(new Date().getFullYear())</script> Siva Prasad Mukherjee. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function copyPrompt(elementId, btn) {
+            const text = document.getElementById(elementId).innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const originalHTML = btn.innerHTML;
+                btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+                btn.style.background = '#2ecc71';
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalHTML;
+                    btn.style.background = '';
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        }
+    </script>
+
+</body>
+</html>
